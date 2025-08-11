@@ -1,0 +1,41 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Blockchain certificate validation system backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "compile": "hardhat compile",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "node": "hardhat node"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "certificate",
+    "validation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "ethers": "^6.8.0",
+    "express": "^5.1.0",
+    "form-data": "^4.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.18.0",
+    "mongoose": "^8.13.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.9"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.18.0"
+  }
+}

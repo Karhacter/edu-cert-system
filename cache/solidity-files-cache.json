@@ -1,0 +1,183 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "D:\\Dev\\Blockchain\\CertChain-validation\\backend\\contracts\\CertificateValidation.sol": {
+      "lastModificationDate": 1754898467273,
+      "contentHash": "a593d70dfae805291922911d926ca1ca",
+      "sourceName": "contracts/CertificateValidation.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "CertificateValidation"
+      ]
+    },
+    "D:\\Dev\\Blockchain\\CertChain-validation\\backend\\contracts\\Admin.sol": {
+      "lastModificationDate": 1754899286863,
+      "contentHash": "989827bf92dfaa99c5ff88648bdbef41",
+      "sourceName": "contracts/Admin.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Employee.sol",
+        "./OrganizationEndorser.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0 <0.9.0"
+      ],
+      "artifacts": [
+        "Admin"
+      ]
+    },
+    "D:\\Dev\\Blockchain\\CertChain-validation\\backend\\contracts\\Employee.sol": {
+      "lastModificationDate": 1754899318919,
+      "contentHash": "2436c2ed90a9d236998d8600e312486f",
+      "sourceName": "contracts/Employee.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0 <0.9.0"
+      ],
+      "artifacts": [
+        "Employee"
+      ]
+    },
+    "D:\\Dev\\Blockchain\\CertChain-validation\\backend\\contracts\\OrganizationEndorser.sol": {
+      "lastModificationDate": 1754899338915,
+      "contentHash": "f54c4af089260e739424672d76624426",
+      "sourceName": "contracts/OrganizationEndorser.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0 <0.9.0"
+      ],
+      "artifacts": [
+        "OrganizationEndorser"
+      ]
+    },
+    "D:\\Dev\\Blockchain\\CertChain-validation\\backend\\contracts\\Skills.sol": {
+      "lastModificationDate": 1754898350320,
+      "contentHash": "62cb369c056ed4aaa441f304c9cde707",
+      "sourceName": "contracts/Skills.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0 <0.9.0"
+      ],
+      "artifacts": [
+        "Skills"
+      ]
+    }
+  }
+}
