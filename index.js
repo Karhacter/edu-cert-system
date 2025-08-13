@@ -7,6 +7,7 @@ const organizationRoutes = require("./routes/organizationRoutes");
 const employeeRoutes = require("./routes/employeeRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 const port = process.env.PORT;
 const app = express();
@@ -22,6 +23,7 @@ app.use("/api/organizations", organizationRoutes);
 app.use("/api/employees", employeeRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/auth", authRoutes);
 
 app.get("/", (req, res) => {
   res.send("Blockchain Certificate Validation API");
