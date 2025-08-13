@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { FiUpload, FiInfo, FiLogOut, FiLink } from 'react-icons/fi';
-import * as api from '../utils/api';
-import { connectWallet, disconnectWallet } from '../utils/web3';
+import * as api from '../../utils/api';
+import { connectWallet, disconnectWallet } from '../../utils/web3';
 
 const IssueCertificate = () => {
   const [isLoading, setIsLoading] = useState(false);

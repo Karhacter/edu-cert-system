@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { FiCheck, FiX, FiEye, FiTrash2, FiLink, FiLogOut } from 'react-icons/fi';
-import * as api from '../utils/api';
-import { connectWallet, disconnectWallet, revokeCertificate } from '../utils/web3';
+import * as api from '../../utils/api';
+import { connectWallet, disconnectWallet, revokeCertificate } from '../../utils/web3';
 
 const ViewCertificates = () => {
   const [certificates, setCertificates] = useState([]);

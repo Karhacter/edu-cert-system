@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { FiSearch, FiCheck, FiX, FiClock, FiUser, FiBook, FiFileText, FiLink, FiLogOut } from 'react-icons/fi';
-import * as api from '../utils/api';
-import { connectWallet, disconnectWallet } from '../utils/web3';
+import * as api from '../../utils/api';
+import { connectWallet, disconnectWallet } from '../../utils/web3';
 
 const VerifyCertificate = () => {
   const [certificateId, setCertificateId] = useState('');

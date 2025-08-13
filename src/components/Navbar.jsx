@@ -65,6 +65,15 @@ const Navbar = () => {
                 View Certificates
               </NavLink>
               
+              <NavLink 
+                to="/admin" 
+                className={({ isActive }) => 
+                  isActive ? "nav-link active" : "nav-link"
+                }
+              >
+                Admin
+              </NavLink>
+              
         
             </div>
             
@@ -125,6 +134,16 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 View Certificates
+              </NavLink>
+              
+              <NavLink 
+                to="/admin" 
+                className={({ isActive }) => 
+                  isActive ? "nav-link active" : "nav-link"
+                }
+                onClick={() => setIsOpen(false)}
+              >
+                Admin
               </NavLink>
             </div>
           </div>
