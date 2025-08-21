@@ -4,6 +4,7 @@ const dashboardController = require('../controllers/dashboardController');
 
 // Dashboard routes
 router.get('/stats', dashboardController.getDashboardStats);
+router.get('/blockchain-stats', dashboardController.getBlockchainTransactionStats);
 router.get('/health', dashboardController.getSystemHealth);
 
 module.exports = router;

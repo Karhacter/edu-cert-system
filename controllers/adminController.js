@@ -21,11 +21,9 @@ exports.registerUser = async (req, res) => {
     }
 
     if (role !== 1 && role !== 2) {
-      return res
-        .status(400)
-        .json({
-          message: "Invalid role. Use 1 for Employee, 2 for Organization",
-        });
+      return res.status(400).json({
+        message: "Invalid role. Use 1 for Employee, 2 for Organization",
+      });
     }
 
     // Register user on blockchain
@@ -82,12 +80,10 @@ exports.isEmployee = async (req, res) => {
     });
   } catch (error) {
     console.error("Error checking employee status:", error);
-    res
-      .status(500)
-      .json({
-        message: "Error checking employee status",
-        error: error.message,
-      });
+    res.status(500).json({
+      message: "Error checking employee status",
+      error: error.message,
+    });
   }
 };
 
@@ -108,12 +104,10 @@ exports.isOrganizationEndorser = async (req, res) => {
     });
   } catch (error) {
     console.error("Error checking organization status:", error);
-    res
-      .status(500)
-      .json({
-        message: "Error checking organization status",
-        error: error.message,
-      });
+    res.status(500).json({
+      message: "Error checking organization status",
+      error: error.message,
+    });
   }
 };
 
@@ -124,7 +118,7 @@ exports.getAllEmployees = async (req, res) => {
     const employees = [];
 
     for (let i = 0; i < count; i++) {
-      const employeeAddress = await contract.registeredEmployees(i);
+      const employeeAddress = await contract.getEmployeeContractByIndex(i);
       const contractAddress = await contract.getEmployeeContractByIndex(i);
 
       employees.push({
@@ -189,11 +183,9 @@ exports.getUserRegistration = async (req, res) => {
     res.status(200).json(registration);
   } catch (error) {
     console.error("Error fetching user registration:", error);
-    res
-      .status(500)
-      .json({
-        message: "Error fetching user registration",
-        error: error.message,
-      });
+    res.status(500).json({
+      message: "Error fetching user registration",
+      error: error.message,
+    });
   }
 };

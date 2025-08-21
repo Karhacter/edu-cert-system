@@ -5,11 +5,15 @@ async function main() {
 
   // Deploy CertificateValidation contract
   console.log("Deploying CertificateValidation...");
-  const CertificateValidation = await hre.ethers.getContractFactory("CertificateValidation");
+  const CertificateValidation = await hre.ethers.getContractFactory(
+    "CertificateValidation"
+  );
   const certificateValidation = await CertificateValidation.deploy();
   await certificateValidation.waitForDeployment();
   const certificateValidationAddress = await certificateValidation.getAddress();
-  console.log(`CertificateValidation deployed to: ${certificateValidationAddress}`);
+  console.log(
+    `CertificateValidation deployed to: ${certificateValidationAddress}`
+  );
 
   // Deploy Admin contract
   console.log("Deploying Admin...");
@@ -34,4 +38,3 @@ main()
     console.error(error);
     process.exit(1);
   });
-  

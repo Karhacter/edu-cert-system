@@ -16,6 +16,9 @@ const upload = multer({
 router.post('/issue', upload.single('certificate'), certificateController.issueCertificate);
 router.get('/verify/:certificateId', certificateController.verifyCertificate);
 router.post('/revoke/:certificateId', certificateController.revokeCertificate);
+router.post('/sync/:certificateId', certificateController.syncCertificateStatus);
+router.post('/sync-all', certificateController.syncAllCertificates);
+router.post('/test-update', certificateController.testUpdateCertificate);
 router.get('/all', certificateController.getAllCertificates);
 
 module.exports = router; 
