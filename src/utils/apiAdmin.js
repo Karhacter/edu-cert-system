@@ -26,6 +26,21 @@ export const getDashboardStats = async () => {
   return data;
 };
 
+export const getBlockchainTransactionStats = async () => {
+  const { data } = await api.get("/dashboard/blockchain-stats");
+  return data;
+};
+
+export const getEmployeeDetails = async (address) => {
+  const { data } = await api.get(`/employees/details/${address}`);
+  return data;
+};
+
+export const updateEmployeeProfile = async (address, profileData) => {
+  const { data } = await api.put(`/employees/update/${address}`, profileData);
+  return data;
+};
+
 // Admin
 export const registerUser = async (payload) => {
   const { data } = await api.post("/admin/register", payload);

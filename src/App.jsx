@@ -18,14 +18,16 @@ import AdminRegisterUser from './pages/admin/AdminRegisterUser';
 import AdminEmployees from './pages/admin/AdminEmployees';
 import AdminOrganizations from './pages/admin/AdminOrganizations';
 import AdminUserLookup from './pages/admin/AdminUserLookup';
+import EmployeeProfile from './pages/user/EmployeeProfile';
+// import OrganizationProfile from './pages/user/OrganizationProfile';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
     <ThemeProvider>
       <Router>
-        <ToastContainer 
-          position="top-right" 
+        <ToastContainer
+          position="top-right"
           autoClose={5000}
           theme="colored"
           toastClassName="bg-[var(--card-bg)] text-[var(--text-primary)] shadow-md"
@@ -44,6 +46,8 @@ function App() {
             <Route path="/admin/employees" element={<AdminEmployees />} />
             <Route path="/admin/organizations" element={<AdminOrganizations />} />
             <Route path="/admin/lookup" element={<AdminUserLookup />} />
+            <Route path="/admin/employees/:address" element={<EmployeeProfile />} />
+          {/* <Route path="/organization/:address" element={<OrganizationProfile />} /> */}
           </Route>
         </Routes>
       </Router>

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { registerUser } from '../../utils/apiAdmin';
+import { ethers } from 'ethers';
+import { registerEmployeeOnChain, checkIsEmployee } from '../../utils/contractAdmin';
 import { Html5Qrcode } from 'html5-qrcode';
 
 const AdminRegisterUser = () => {
@@ -53,13 +54,47 @@ const AdminRegisterUser = () => {
 		setLoading(true);
 		setMessage('');
 		setError('');
+		
 		try {
-			const payload = { ...form, role: Number(form.role) };
-			const res = await registerUser(payload);
-			setMessage(`Registered ${res.role} at ${res.ethAddress}`);
-			setForm({ ethAddress: '', name: '', location: '', description: '', role: '1' });
+			// Validate form
+			if (!form.ethAddress || !form.name || !form.location || !form.description) {
+				throw new Error('All fields are required');
+			}
+			
+			// Check if already registered
+			const isAlreadyEmployee = await checkIsEmployee(form.ethAddress);
+			if (isAlreadyEmployee) {
+				throw new Error('This address is already registered as an employee');
+			}
+			
+			// Convert registration fee to wei
+			const feeInWei = ethers.parseEther(registrationFee);
+			
+			// Register user on blockchain
+			const result = await registerEmployeeOnChain({
+				ethAddress: form.ethAddress,
+				name: form.name,
+				location: form.location,
+				description: form.description,
+				role: Number(form.role),
+				value: feeInWei
+			});
+			
+			setMessage(`Transaction submitted! Hash: ${result.txHash}`);
+			setTxHash(result.txHash);
+			
+			// Wait for transaction confirmation
+			const receipt = await result.transaction.wait();
+			if (receipt.status === 1) {
+				setMessage(`Successfully registered ${form.role === '1' ? 'Employee' : 'Organization'} on blockchain!`);
+				setForm({ ethAddress: '', name: '', location: '', description: '', role: '1' });
+			} else {
+				throw new Error('Transaction failed');
+			}
+			
 		} catch (e) {
-			setError(e?.response?.data?.message || 'Registration failed');
+			console.error('Registration error:', e);
+			setError(e?.message || 'Registration failed. Please check your MetaMask connection and try again.');
 		} finally {
 			setLoading(false);
 		}

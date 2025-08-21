@@ -47,6 +47,28 @@ export const revokeCertificate = async (certificateId) => {
   }
 };
 
+// Sync individual certificate status
+export const syncCertificateStatus = async (certificateId) => {
+  try {
+    const response = await api.post(`/certificates/sync/${certificateId}`);
+    return response.data;
+  } catch (error) {
+    console.error("API Error - Sync Certificate Status:", error);
+    throw error;
+  }
+};
+
+// Sync all certificates
+export const syncAllCertificates = async () => {
+  try {
+    const response = await api.post("/certificates/sync-all");
+    return response.data;
+  } catch (error) {
+    console.error("API Error - Sync All Certificates:", error);
+    throw error;
+  }
+};
+
 // Get all certificates
 export const getAllCertificates = async () => {
   try {
